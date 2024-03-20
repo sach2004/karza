@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="bg-text-stroke">
+      <span>Karza </span>
+    </div>
+    <div class="container">
+      <div class="heading-block">
+        <div>
+          <h1>Want Your money back?</h1>
+        </div>
+        <div><h1 style="color: #0f1923">We got you!</h1></div>
+        
+      </div>
+
+      <div class="signup-form">
+        <h1
+          style="
+            text-align: center;
+            margin-top: 15%;
+            text-transform: uppercase;
+            margin-bottom: 15%;
+          "
+        >
+          Login
+        </h1>
+
+        <form action="/login" method="POST" name="loginform">
+          <label for="username">Username</label
+          ><input type="text" name="username" />
+          <label class="pwd" for="password">password</label
+          ><input type="password" name="password" />
+          <input id="sub" type="submit" name="submit" value="submit" style="display: none;" />
+          <div class="button-box" style="margin-top: 50px">
+            
+            <div id="log" class="button-mask button-mask-slide">
+              <span >Login</span>
+            </div>
+          </div>
+        </form>
+        <div class="create">
+        <a class="anchor" href="/register"><P>No Account? Create One</P></a>
+      </div>
+    </div>
+
+    <div class="bg-text-stroke">
+      <span>Karza </span>
+    </div>
+
+    <script>
+
+        let sub = document.getElementById("sub");
+        document.getElementById("log").addEventListener( 'click', function() {
+
+          
+          sub.click();
+
+        });
+
+    </script>
+  </body>
+</html>

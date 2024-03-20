@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap");
+
+/* COLORS */
+/* FONT */
+body {
+    margin: 0;
+   height: 892px;
+    overflow: hidden;
+    /* border: 10px solid rgb(211, 18, 241); */
+    background-color: #0f1923;
+    color: #0f1923;
+    font: 400 18px/22px "Rajdhani", sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    width: 830px;
+    height: 670px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.container div {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 100%;
+    padding: 36px;
+  
+}
+
+.container div.heading-block {
+    width: 348px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container div.heading-block .vlrnt-logo {
+    display: flex;
+    align-items: flex-end;
+}
+
+.container div.heading-block .vlrnt-logo img {
+    width: 100px;
+}
+
+.container div.signup-form {
+    width: 482px;
+}
+
+.heading-block {
+    background-color: rgb(211, 18, 241);
+    color: white;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.heading-block h1 {
+    margin: 0;
+    font: 700 64px/66px "Rajdhani", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+.signup-form {
+    /* Button and hover effect */
+
+}
+
+.signup-form p {
+    margin: 0;
+}
+
+.signup-form form {
+   
+}
+
+.signup-form form * {
+    display: block;
+    font-family: "Rajdhani", sans-serif;
+}
+
+.signup-form label, .signup-form .button-box {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.signup-form label {
+    margin: 8px 0;
+}
+
+.signup-form input {
+    width: 90%;
+    height: 40px;
+    margin-bottom: 25px;
+    padding: 0 8px;
+    font: 400 18px "Rajdhani", sans-serif;
+}
+
+.signup-form select {
+    width: 95%;
+    height: 48px;
+    margin-bottom: 30px;
+    padding: 0 8px;
+    font: 400 18px "Rajdhani", sans-serif;
+}
+
+.signup-form div.button-box {
+    display: flex;
+    justify-content: center; /* Center the button */
+    width: 100%; /* Make it span the full width of its parent */
+    padding: 6px;
+}
+
+
+
+
+.signup-form div.button-box .button-mask {
+    cursor: pointer;
+    position: relative;
+    padding: 18px 60px;
+    display: block;
+    overflow: hidden;
+    color: white;
+    background-color: rgb(211, 18, 241);
+}
+
+.signup-form div.button-box .button-mask:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -5%;
+    width: 130%;
+    height: 100%;
+    background-color: #0f1923;
+    transform: translateX(-100%) skew(-15deg);
+    transition: transform 0.4s ease;
+}
+
+.signup-form div.button-box .button-mask:hover:before {
+    transform: translateX(0) skew(-15deg);
+}
+
+.signup-form div.button-box .button-mask span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Outlined text background */
+.bg-text-stroke {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 72px 48px;
+    z-index: -1;
+}
+
+.bg-text-stroke span {
+    font: 700 21rem "Teko", sans-serif;
+    line-height: 0.8;
+    text-transform: uppercase;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.3);
+    -webkit-text-stroke-width: 1px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 70%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        width: 80%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.create{
+    text-align: center;
+    margin-left: 30px;
+    font-size: 20px;
+    
+}
+
+.anchor{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: rgb(0, 0, 0);
+    font-weight: 550;
+   
+}
+

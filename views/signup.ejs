@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/signup.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading-block">
+        <div>
+          <h1>Want Your money back?</h1>
+        </div>
+        <div><h1 style="color: #0f1923">We got you!</h1></div>
+        <div class="create">
+          <a class="anchor" href="/login"><P>Already Have An Account? Click Here</P></a>
+        </div>
+      </div>
+
+      <div class="signup-form">
+        <h1
+          style="text-align: center; margin-top: 0%; text-transform: uppercase"
+        >
+          Sign up
+        </h1>
+
+        <form action="/register" method="POST">
+          <label for="codename">Username</label
+          ><input type="text" name="username" />
+          <label for="fullname">Fullname</label
+          ><input type="text" name="name" />
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="example@mail.com"
+          />
+          <label for="phonenumber">Phone number</label
+          ><input
+            type="tel"
+            name="phone"
+            id="phone"
+            placeholder="1234567890"
+          />
+          <label for="password">password</label
+          ><input type="password" name="password" />
+          
+            <input id="sub" type="submit" style="display: none;">
+          <div class="button-box">
+            <div id="join" class="button-mask button-mask-slide">
+              <span >Join</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="bg-text-stroke">
+      <span>Karza </span>
+    </div>
+
+
+    <script>
+      let sub = document.getElementById("sub");
+      document.getElementById("join").addEventListener('click', function(){
+        sub.click();
+      });
+
+    </script>
+  </body>
+</html>
