@@ -1,4 +1,4 @@
-/* Start Global Rules */
+
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap");
 * {
@@ -28,7 +28,7 @@ body {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-color: rgba(255, 255, 255, 0.3);
     -webkit-text-stroke-width: 1px;
-    color: transparent; /* Ensuring compatibility outside of WebKit browsers */
+    color: transparent; 
     /* rgba(211, 18, 241, 0.6) */
 }
 a {
@@ -48,27 +48,27 @@ ul {
   padding-right: 15px;
  
 }
-/* Small */
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
   }
 }
-/* Medium */
+
 @media (min-width: 992px) {
   .container {
     width: 970px;
   }
 }
-/* Large */
+
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
   }
 }
-/* End Global Rules */
 
-/* Start Landing Page */
+
+
 .landing-page header {
   min-height: 80px;
   display: flex;
@@ -138,7 +138,7 @@ ul {
   border-radius: 20px;
   margin-left: 30px;
   color: #ffffff;
-  /* background-color: rgb(211, 18, 241); */
+ 
 }
 .landing-page header .links li:not(:last-child):hover {
   color: rgb(211, 18, 241);
@@ -404,4 +404,3 @@ input[type="text"]::placeholder, input[type="number"]::placeholder {
 
 
 
-/* End Landing Page */

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const plm = require("passport-local-mongoose");
 
-mongoose.connect("mongodb+srv://sachin:sachin@cluster0.nlf26rw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+mongoose.connect("mongodb://localhost:27017/karza");
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -58,7 +58,8 @@ const userSchema = new mongoose.Schema({
             type: String
         },
 
-        amount: Number
+        amount: Number,
+        days : Number
     }],
 
     loanhistory : [{

@@ -15,6 +15,7 @@ passport.use(new localStrategy(userModel.authenticate()));
 
 
 
+
  router.get('/', function(req, res, next) {
    res.render('login', { title: 'Express' });
    });
@@ -79,10 +80,15 @@ function isLoggedIn(req,res,next){
 
 router.post('/loan-request/lend', isLoggedIn, async (req, res) => {
   const amount = Number(req.body.amount); 
+  const days = Number(req.body.noofdays)
+  console.log(days)
+  
+  if (isNaN(days)) {
+    return res.status(400).send("Invalid number of days entered");
+  }
   const userSearch = req.body['user-search']; 
  
   try {
-     
      const borrower = await userModel.findOne({ username: userSearch });
      const user = req.user;
      if (!borrower) {
@@ -91,7 +97,8 @@ router.post('/loan-request/lend', isLoggedIn, async (req, res) => {
     
      user.lend.push({
       borrowers: borrower._id,
-      amount : amount
+      amount : amount,
+      days : days
      })
      await  user.save()
      
@@ -99,7 +106,8 @@ router.post('/loan-request/lend', isLoggedIn, async (req, res) => {
       lender: req.user._id, 
       lendername: req.user.username,
       lenderdp : req.user.dp,
-      amount: amount 
+      amount: amount,
+      days : days
      });
 
      user.lendhistory.push({
@@ -109,7 +117,7 @@ router.post('/loan-request/lend', isLoggedIn, async (req, res) => {
      await  user.save()
      
      borrower.loanhistory.push({
-      lender: req.user._id, 
+      lender: req.user._id,
       lendername: req.user.username,
       lenderdp : req.user.dp,
       amount: amount 
@@ -119,15 +127,16 @@ router.post('/loan-request/lend', isLoggedIn, async (req, res) => {
      const hasNewNotifications = false;
  
      
-     res.render('profile', {user , hasNewNotifications});
+     res.render('profile', {user, hasNewNotifications});
   } catch (error) {
      console.error("Error processing loan request:", error);
      res.status(500).send("Error processing your request");
   }
- });
+});
 
 router.post('/loan-request/borrow', isLoggedIn, async (req, res) => {
   const amount = Number(req.body.amount); 
+  
   const userSearch = req.body['user-search']; 
  
   try {
@@ -140,7 +149,7 @@ router.post('/loan-request/borrow', isLoggedIn, async (req, res) => {
     
      user.loan.push({
       lender: lender._id,
-      amount : amount
+      amount : amount,
      })
      await  user.save()
      
@@ -194,6 +203,7 @@ router.get('/accept-loan/:loanId', isLoggedIn, async (req, res) => {
     const user = await userModel.findById(userId); 
     const loan = user.loan.find(l => l._id.toString() === loanId);
     const amount = loan.amount;
+    const days = loan.days
 
     if (!loan) {
       return res.status(404).send("Loan not found");
@@ -205,8 +215,8 @@ router.get('/accept-loan/:loanId', isLoggedIn, async (req, res) => {
     if (user.phoneNumber) {
       const formattedPhoneNumber = '+91' + user.phoneNumber;
       client.messages.create({
-          body: `Loan from ${user.name} of ₹${amount} has been initiated`,
-          from: '+16066992519', 
+          body: `Loan from ${loan.lendername} of ₹${amount} has been initiated, SMS will be sent every ${days} days.`,
+          from: '+12082890188', 
           to: formattedPhoneNumber
       })
       .then(message => console.log(`Message SID: ${message.sid}`))
@@ -216,13 +226,13 @@ router.get('/accept-loan/:loanId', isLoggedIn, async (req, res) => {
     
 
     await user.save(); 
-    cron.schedule('0 * * * *', () => {
+    cron.schedule('0 0 */${days} * *', () => {
       console.log("Running scheduled SMS task every day.");
       if (user.phoneNumber) {
         const formattedPhoneNumber = '+91' + user.phoneNumber;
         client.messages.create({
-            body: `Loan from ${user.name} of ₹${amount} has been initiated`,
-            from: '+16066992519', 
+            body: `Loan from ${loan.lendername} of ₹${amount} has been initiated, SMS will be sent every ${days} days.`,
+            from: '+12082890188', 
             to: formattedPhoneNumber
         })
         .then(message => console.log(`Message SID: ${message.sid}`))

@@ -1,4 +1,4 @@
-/* Start Global Rules */
+
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap");
 * {
@@ -28,7 +28,7 @@ body {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-color: rgba(255, 255, 255, 0.3);
     -webkit-text-stroke-width: 1px;
-    color: transparent; /* Ensuring compatibility outside of WebKit browsers */
+    color: transparent; 
     /* rgba(211, 18, 241, 0.6) */
 }
 a {
@@ -412,4 +412,4 @@ input[type="text"]::placeholder, input[type="number"]::placeholder {
 
 
 
-/* End Landing Page */
+

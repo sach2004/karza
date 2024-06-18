@@ -1,4 +1,4 @@
-/* Start Global Rules */
+
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap");
 * {
@@ -8,6 +8,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    overflow-y: hidden;
     overflow-x: hidden;
     background-color: #0f1923;
     color: #0f1923;
@@ -28,7 +29,7 @@ body {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-color: rgba(255, 255, 255, 0.3);
     -webkit-text-stroke-width: 1px;
-    color: transparent; /* Ensuring compatibility outside of WebKit browsers */
+    color: transparent; 
     /* rgba(211, 18, 241, 0.6) */
 }
 a {
@@ -240,24 +241,25 @@ ul {
   text-transform: uppercase;
 }
 
+
+
 .profile span{
     color: rgb(211,18,241);
     text-transform: uppercase;
 }
 
 .loan{
-    height: 400px;
+    height: 700px;
     width: 100%;
-    margin-top: 40px;
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: -70px;
     padding-bottom: 20px;
 }
 
 .lend, .borrow{
     overflow: hidden;
-   height: 100%;
+   height: 70%;
     width: 400px;
     background-color: rgb(211, 18, 241,0.1);
     margin: 0px 190px;
@@ -334,4 +336,4 @@ input[type="text"]::placeholder, input[type="number"]::placeholder {
 
 
 
-/* End Landing Page */
+

@@ -91,12 +91,12 @@
     
     rejectButtons.forEach(button => {
         button.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default action of the link
-            const loanId = this.href.split('/').pop(); // Get the loan ID from the href
+            e.preventDefault(); 
+            const loanId = this.href.split('/').pop(); 
             fetch(`/deletenoti/${loanId}`, { method: 'GET' })
                 .then(response => {
                     if (response.ok) {
-                        this.closest('.req').remove(); // Remove the div if the server successfully deletes the loan
+                        this.closest('.req').remove(); 
                     } else {
                         console.error('Failed to delete the loan on the server.');
                     }

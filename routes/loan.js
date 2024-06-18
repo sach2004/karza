@@ -17,6 +17,11 @@ const loanSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    days: {
+        type: Number,
+        required: true,
+        default : 7
+    },
     status: {
         type: String,
         enum: ['pending', 'accepted', 'repaid'],

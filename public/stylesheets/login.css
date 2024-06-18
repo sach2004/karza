@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap");
 
-/* COLORS */
-/* FONT */
+
 body {
     margin: 0;
     height: 100vh;
@@ -72,7 +71,7 @@ body {
 }
 
 .signup-form {
-    /* Button and hover effect */
+  
 
 }
 
@@ -117,8 +116,8 @@ body {
 
 .signup-form div.button-box {
     display: flex;
-    justify-content: center; /* Center the button */
-    width: 100%; /* Make it span the full width of its parent */
+    justify-content: center; 
+    width: 100%; 
     padding: 6px;
     margin-top: 50px;
 }
@@ -160,7 +159,7 @@ body {
 .buttonSubmitHide {
     display: none;
   }
-/* Outlined text background */
+
 .bg-text-stroke {
     position: absolute;
     width: 100%;
