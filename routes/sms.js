@@ -2,9 +2,9 @@ const cron = require('node-cron');
 const twilio = require('twilio');
 
 
-
-const accountSid = 'AC98c1dff64a2124694e46fb823660c93e';
-const authToken = '38f4857ba0b08e65d42e5f8f4e36b685';
+require('dotenv').config();
+const accountSid = process.env.ACCOUNT_SID;
+const authToken = process.env.AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 
 function sendScheduledSms() {
